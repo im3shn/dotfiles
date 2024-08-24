@@ -1,2 +1,3 @@
 PATH="$PATH":"$HOME/.local/scripts/"
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^q "tmux-sessionizer\n"
+bindkey -s ^f "utility-session\n"
