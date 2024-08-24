@@ -10,18 +10,22 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 for_window [class="^.*"] border pixel 1
-
 set $mod Mod4
 # set $mod Mod1
-
+# exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id picom
-exec --no-startup-id feh --bg-scale ~/anime_pics/yellow_red_blue.png
+exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/charging3.png
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 # kill any hanging polybar processes
-# exec_always killall polybar
-exec --no-startup-id ~/.config/polybar/launch_polybar.sh
+bindsym $mod+Shift+Mod1+T exec killall polybar
+bindsym $mod+Shift+T exec --no-startup-id ~/.config/polybar/launch_polybar.sh
 
+
+bindsym Shift+grave exec dunstctl context
+bindsym Mod1+Shift+grave exec dunstctl close-all
+bindsym Control+grave exec dunstctl history-pop
+bindsym Control+Shift+grave exec dunstctl close
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
 bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
 bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
@@ -233,8 +237,10 @@ bindsym $mod+Shift+c exec --no-startup-id google-chrome-stable
 bindsym $mod+Shift+b exec --no-startup-id brave
 
 assign [class="Google-chrome"] $ws2
-assign [class="Brave"] $ws1
+assign [class="Brave-browser"] $ws1
 assign [class="kitty"] $ws3
+assign [class="Signal"] $ws7
+assign [class="Gimp"] $ws6
 
 # power menu
 # Create Log out, Reboot, Poweroff bindings
