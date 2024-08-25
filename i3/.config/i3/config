@@ -15,17 +15,20 @@ set $mod Mod4
 # exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/charging3.png
-exec --no-startup-id xrdb -merge ~/.Xresources
+#exec --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+
 # kill any hanging polybar processes
 bindsym $mod+Shift+Mod1+T exec killall polybar
 bindsym $mod+Shift+T exec --no-startup-id ~/.config/polybar/launch_polybar.sh
 
-
+# dunst notification binds
 bindsym $mod+grave exec dunstctl context
 bindsym Mod1+Shift+grave exec dunstctl close-all
 bindsym Control+grave exec dunstctl history-pop
 bindsym Control+Shift+grave exec dunstctl close
+
+# screenshot binds
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
 bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
 bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
@@ -71,7 +74,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Return exec --no-startup-id kitty; workspace $ws3;
 #; workspace $ws3;  
 
 # kill focused window
@@ -235,7 +238,7 @@ client.background        $base
 
 exec --no-startup-id google-chrome-stable;
 exec --no-startup-id brave;
-exec --no-startup-id kitty tmux utility-session;
+exec --no-startup-id kitty utility-session;
 
 bindsym $mod+Shift+c exec --no-startup-id google-chrome-stable https://google.com; workspace $ws2;
 bindsym $mod+Shift+b exec --no-startup-id brave https://youtube.com; workspace $ws1;
