@@ -37,5 +37,6 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<C-q>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww utility-session<CR>")
 

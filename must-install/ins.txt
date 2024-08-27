@@ -42,3 +42,7 @@ oh-my-zsh
 zsh-autosuggestions
 zsh-sytaxhighlighting
 
+[chrome-extensions]
+vimium
+page-align-center
+price-history
