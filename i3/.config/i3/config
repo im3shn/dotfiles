@@ -80,10 +80,11 @@ bindsym $mod+Return exec --no-startup-id kitty; workspace $ws3;
 # kill focused window
 bindsym $mod+Shift+q kill
 
+bindsym $mod+space exec i3-dmenu-desktop
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+space exec --no-startup-id rofi -show combi
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+# bindsym $mod+d exec --no-startup-id rofi -show drun
+# bindsym $mod+space exec --no-startup-id rofi -show combi
+# bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+h focus left
