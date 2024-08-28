@@ -32,15 +32,20 @@ wget
 fd  
 bluetuith 
 nmtui
+screenkey
+
+
 [yay]
 brave-bin
 google-chrome
+
 
 [others]
 tmux-tpm
 oh-my-zsh
 zsh-autosuggestions
 zsh-sytaxhighlighting
+
 
 [chrome-extensions]
 vimium

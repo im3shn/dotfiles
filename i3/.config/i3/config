@@ -249,7 +249,7 @@ assign [class="Brave-browser"] $ws1
 assign [class="kitty"] $ws3
 assign [class="Signal"] $ws7
 assign [class="Gimp"] $ws6
-
+assign [class="obs"] $ws8
 # power menu
 # Create Log out, Reboot, Poweroff bindings
 mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
