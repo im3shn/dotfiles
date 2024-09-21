@@ -15,6 +15,7 @@ set $mod Mod4
 # exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/charging3.png
+exec --no-startup-id nightlight start
 # exec --no-startup-id xrdb -merge ~/.Xresources
 # exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 
@@ -272,3 +273,6 @@ bindsym $mod+Shift+x mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff"
 bindsym $mod+mod1+f exec nautilus
 #lock
 bindsym $mod+mod1+L exec i3lock --color "#000000"
+
+bindsym $mod+mod1+T exec notify-send "$(date)"
+bindsym $mod+mod1+B exec notify-send "$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -e percentage -e time)" 

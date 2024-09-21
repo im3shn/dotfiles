@@ -38,7 +38,7 @@ screenkey
 [yay]
 brave-bin
 google-chrome
-
+github-cli
 
 [others]
 tmux-tpm
