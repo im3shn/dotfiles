@@ -3,7 +3,7 @@
 if [[ "$1" == "start" ]]
 then
 kill $(ps ax | pgrep redshift)
-#sleep 2
+sleep 2
 redshift -l 10.9240:76.9826 &
 fi
 

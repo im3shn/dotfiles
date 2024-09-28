@@ -33,7 +33,7 @@ fd
 bluetuith 
 nmtui
 screenkey
-
+thefuck
 
 [yay]
 brave-bin

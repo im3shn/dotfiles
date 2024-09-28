@@ -133,3 +133,4 @@ if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
   utility-session && exit;
 fi
 
+ eval $(thefuck --alias)

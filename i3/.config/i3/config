@@ -15,7 +15,6 @@ set $mod Mod4
 # exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/charging3.png
-exec --no-startup-id nightlight start
 # exec --no-startup-id xrdb -merge ~/.Xresources
 # exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 
@@ -24,10 +23,10 @@ bindsym $mod+Shift+Mod1+T exec killall polybar
 bindsym $mod+Shift+T exec --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 # dunst notification binds
-bindsym $mod+grave exec dunstctl context
-bindsym Mod1+Shift+grave exec dunstctl close-all
-bindsym Control+grave exec dunstctl history-pop
-bindsym Control+Shift+grave exec dunstctl close
+# bindsym $mod+grave exec dunstctl context
+# bindsym Mod1+Shift+grave exec dunstctl close-all
+bindsym $mod+grave exec dunstctl history-pop
+bindsym $mod1+Shift+grave exec dunstctl close
 
 # screenshot binds
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
@@ -275,4 +274,5 @@ bindsym $mod+mod1+f exec nautilus
 bindsym $mod+mod1+L exec i3lock --color "#000000"
 
 bindsym $mod+mod1+T exec notify-send "$(date)"
-bindsym $mod+mod1+B exec notify-send "$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -e percentage -e time)" 
+bindsym $mod+mod1+B exec notify-send "$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -e percentage -e time)"
+
