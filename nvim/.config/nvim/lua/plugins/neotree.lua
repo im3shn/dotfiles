@@ -15,7 +15,7 @@ return {
                     hide_dotfiles = false,
                     hide_gitignored = true,
                     hide_by_name = {
-                        -- '.git',
+                        '.git',
                         -- '.DS_Store',
                         -- 'thumbs.db',
                     },
