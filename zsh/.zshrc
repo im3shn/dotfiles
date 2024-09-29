@@ -120,17 +120,19 @@ source $ZSH/oh-my-zsh.sh
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
-eval "$(zoxide init zsh)"
 
 # eval "$(starship init zsh)"
-
-source ~/.zsh_profile
-precmd() { print "\n" }
-# start tmux default
-if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
-  utility-session && exit;
+if [[ $ZPROFILE_RUN != yes && -f ~/.zsh_profile ]]; then
+    source ~/.zsh_profile
 fi
+# source ~/.zsh_profile
+precmd() { print "\n" }
 
- eval $(thefuck --alias)
+# start tmux default
+# if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+#   utility-session && exit;
+# fi
+
+# 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
+
