@@ -26,7 +26,7 @@ bindsym $mod+Shift+T exec --no-startup-id ~/.config/polybar/launch_polybar.sh
 # bindsym $mod+grave exec dunstctl context
 # bindsym Mod1+Shift+grave exec dunstctl close-all
 bindsym $mod+grave exec dunstctl history-pop
-bindsym $mod1+Shift+grave exec dunstctl close
+bindsym $mod+Shift+grave exec dunstctl close
 
 # screenshot binds
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
