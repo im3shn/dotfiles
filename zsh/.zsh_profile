@@ -14,3 +14,7 @@ bindkey -s ^f "utility-session\n"
 
 # nvm
 source /usr/share/nvm/init-nvm.sh
+
+# java
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+export PATH="$JAVA_HOME/bin:$PATH"

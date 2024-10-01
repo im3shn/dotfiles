@@ -1,0 +1,11 @@
+# terdon's answer is correct in most cases, but for distributions that have adopted systemd-logind it handles power events instead of acpid. On those distributions, add or edit this setting 
+sudo nvim /etc/systemd/logind.conf
+# to disable the power button:
+
+HandlePowerKey=ignore
+
+#To pick up the new setting, restart logind with
+
+sudo systemctl restart systemd-logind
+
+# On some older distributions logind can't be restarted while a desktop session is active, in which case you'll need to reboot in order to pick up the new setting.
