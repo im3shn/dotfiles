@@ -1,3 +1,9 @@
 [submodule "test/neovimrc"]
 	path = test/neovimrc
 	url = https://github.com/im3shn/neovimrc.git
+[submodule "nvim/.config/neovimrc"]
+	path = nvim/.config/neovimrc
+	url = https://github.com/im3shn/neovimrc.git
+[submodule "nvim/.config/nvim"]
+	path = nvim/.config/nvim
+	url = https://github.com/im3shn/nvim.git
