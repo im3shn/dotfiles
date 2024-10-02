@@ -10,6 +10,8 @@ end
 return {
     {
         "folke/tokyonight.nvim",
+        name = "tokyonight",
+        priority = 1000,
         config = function()
             require("tokyonight").setup({
                 -- your configuration comes here
@@ -20,7 +22,7 @@ return {
                 styles = {
                     -- Style to be applied to different syntax groups
                     -- Value is any valid attr-list value for `:help nvim_set_hl`
-                    comments = { italic = false },
+                    comments = { italic = true },
                     keywords = { italic = false },
                     -- Background styles. Can be "dark", "transparent" or "normal"
                     sidebars = "dark", -- style for sidebars, see below
@@ -33,12 +35,13 @@ return {
     {
         "rose-pine/neovim",
         name = "rose-pine",
+        priority = 1000,
         config = function()
             require('rose-pine').setup({
                 disable_background = true,
                 highlight_groups = {
-                    ["@keyword"] = { fg = "#ebbcba" },
-                    ["@type"] = { fg = "#ebbcba" },
+                    -- ["@keyword"] = { fg = "#ebbcba" },
+                    -- ["@type"] = { fg = "#ebbcba" },
                 },
             })
 
@@ -47,6 +50,22 @@ return {
             ColorMyPencils()
         end
     },
-
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+            require("catppuccin").setup({
+                flavour = "mocha",
+                transparent_background = true,
+                styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+                    comments = { "italic" }, -- Change the style of comments
+                },
+            })
+            vim.o.termguicolors = true
+            vim.o.background = "dark"
+            vim.cmd[[colorscheme catppuccin]]
+        end
+    },
 
 }

@@ -13,6 +13,10 @@ return {
             require("telescope.themes").get_dropdown({}),
           },
         },
+        defaults = { 
+          file_ignore_patterns = {".git/", ".cache", "%.o", "%.a", "%.out", "%.class",
+	        	"%.pdf", "%.mkv", "%.mp4", "%.zip", "node_modules"},
+        },
       })
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
