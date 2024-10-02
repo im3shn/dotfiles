@@ -1,0 +1,3 @@
+[submodule "test/neovimrc"]
+	path = test/neovimrc
+	url = https://github.com/im3shn/neovimrc.git
