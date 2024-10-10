@@ -31,12 +31,12 @@ bindsym $mod+Shift+grave exec dunstctl close
 # screenshot binds
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
 bindsym $mod+Print exec maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).jpg"
-bindsym Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
+bindsym $mod+Shift+Print exec maim --select "/home/$USER/Pictures/$(date).jpg"
 
 ## Clipboard Screenshots
 bindsym Ctrl+Print exec maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+$mod+Print exec maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Shift+Print exec maim --select | xclip -selection clipboard -t image/png
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.

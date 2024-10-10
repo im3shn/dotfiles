@@ -1,5 +1,5 @@
  sudo nvim /etc/X11/xorg.conf.d/00-keyboard.conf
-
+sudo nvim ~/.config/cosmic/com.system76.CosmicComp/v1/xkb_config
 
 # probably wise not to edit this file manually. Use localectl(1) to
 # update this file.
