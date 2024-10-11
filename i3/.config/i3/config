@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 set $mod Mod4
 # set $mod Mod1
 # exec --no-startup-id /usr/lib/gsd-xsettings
@@ -19,14 +19,14 @@ exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/charging3.png
 # exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 
 # kill any hanging polybar processes
-bindsym $mod+Shift+Mod1+T exec killall polybar
+bindsym $mod+Shift+Mod1+T exec --no-startup-id killall polybar
 bindsym $mod+Shift+T exec --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 # dunst notification binds
 # bindsym $mod+grave exec dunstctl context
 # bindsym Mod1+Shift+grave exec dunstctl close-all
-bindsym $mod+grave exec dunstctl history-pop
-bindsym $mod+Shift+grave exec dunstctl close
+bindsym $mod+grave exec --no-startup-id dunstctl history-pop
+bindsym $mod+Shift+grave exec --no-startup-id dunstctl close
 
 # screenshot binds
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
@@ -69,6 +69,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -80,7 +81,7 @@ bindsym $mod+Return exec --no-startup-id kitty; workspace $ws3;
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+space exec i3-dmenu-desktop
+bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
 # start rofi (a program launcher)
 # bindsym $mod+d exec --no-startup-id rofi -show drun
 # bindsym $mod+space exec --no-startup-id rofi -show combi
@@ -259,10 +260,10 @@ bindsym $mod+Shift+x mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff"
 # shortcuts
 
 # file explorer
-bindsym $mod+mod1+f exec nautilus
+bindsym $mod+mod1+f exec --no-startup-id nautilus
 #lock
 bindsym $mod+mod1+L exec i3lock --color "#000000"
 
-bindsym $mod+mod1+T exec notify-send "$(date)"
-bindsym $mod+mod1+B exec notify-send "$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -e percentage -e time)"
+bindsym $mod+mod1+T exec --no-startup-id notify-send "$(date)"
+bindsym $mod+mod1+B exec --no-startup-id notify-send "$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -e percentage -e time)"
 
