@@ -1,8 +1,8 @@
 ZPROFILE_RUN=yes 
 source <(fzf --zsh)
-
+# echo "ZSH_PROFILE"
 eval "$(zoxide init zsh)"
-eval "$(thefuck --alias)"
+# eval "$(thefuck --alias)"
 
 PATH="$PATH":"$HOME/.local/scripts/"
 bindkey -s ^q "tmux-sessionizer\n"
@@ -13,7 +13,7 @@ bindkey -s ^f "utility-session\n"
 # export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
 # nvm
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 
 # java
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
@@ -21,3 +21,13 @@ export PATH="$JAVA_HOME/bin:$PATH"
 
 alias vv="nvim ."
 alias nn="nvim"
+
+
+# web-search
+function yt() {
+    brave "https://www.youtube.com/results?search_query=$*";
+}
+
+function gls(){
+    google-chrome-stable "https://www.google.com/search?q=$*";
+}

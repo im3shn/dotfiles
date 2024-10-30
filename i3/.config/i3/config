@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 set $mod Mod4
 # set $mod Mod1
 # exec --no-startup-id /usr/lib/gsd-xsettings
@@ -231,22 +231,27 @@ client.background        $base
 exec --no-startup-id google-chrome-stable;
 exec --no-startup-id brave;
 exec --no-startup-id kitty utility-session;
+# available at  /home/$USER/.local/share/applications/
+exec --no-startup-id /opt/google/chrome/google-chrome "--profile-directory=Profile 5" --app-id=hnpfjngllnobngcgfapefoaidbinmjnm;
 
 bindsym $mod+Shift+c exec --no-startup-id google-chrome-stable https://google.com; workspace $ws2;
 bindsym $mod+Shift+b exec --no-startup-id brave https://youtube.com; workspace $ws1;
+bindsym $mod+Mod1+7 exec --no-startup-id signal-desktop;
 # bindsym Mod1+Return exec --no-startup-id kitty utility-session;
 
+assign [title="WhatsApp Web"] $ws7 
 assign [class="Google-chrome"] $ws2
 assign [class="Brave-browser"] $ws1
 assign [class="kitty"] $ws3
 assign [class="Signal"] $ws7
 assign [class="Gimp"] $ws6
 assign [class="obs"] $ws8
+
 # power menu
 # Create Log out, Reboot, Poweroff bindings
 mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
         bindsym r exec --no-startup-id systemctl reboot
-        bindsym s exec --no-startup-id systemctl suspend; mode "default"
+        bindsym s exec --no-startup-id i3lock -c "000000" && systemctl suspend; mode "default"
         bindsym l exit
         bindsym p exec --no-startup-id systemctl poweroff
 
@@ -262,8 +267,8 @@ bindsym $mod+Shift+x mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff"
 # file explorer
 bindsym $mod+mod1+f exec --no-startup-id nautilus
 #lock
-bindsym $mod+mod1+L exec i3lock --color "#000000"
-
+bindsym $mod+mod1+L exec --no-startup-id i3lock -c "000000";
 bindsym $mod+mod1+T exec --no-startup-id notify-send "$(date)"
 bindsym $mod+mod1+B exec --no-startup-id notify-send "$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -e percentage -e time)"
 
+exec --no-startup-id i3-battery-popup -L 50 -I 10 -n
