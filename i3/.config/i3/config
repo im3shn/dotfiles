@@ -233,6 +233,7 @@ exec --no-startup-id brave;
 exec --no-startup-id kitty utility-session;
 # available at  /home/$USER/.local/share/applications/
 exec --no-startup-id /opt/google/chrome/google-chrome "--profile-directory=Profile 5" --app-id=hnpfjngllnobngcgfapefoaidbinmjnm;
+exec --no-startup-id signal-desktop;
 
 bindsym $mod+Shift+c exec --no-startup-id google-chrome-stable https://google.com; workspace $ws2;
 bindsym $mod+Shift+b exec --no-startup-id brave https://youtube.com; workspace $ws1;
