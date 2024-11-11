@@ -39,6 +39,10 @@ thefuck
 brave-bin
 google-chrome
 github-cli
+whatsapp-web
+beeper
+bluemail
+clipster
 
 [others]
 tmux-tpm
