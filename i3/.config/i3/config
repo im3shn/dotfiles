@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 workspace_layout tabbed
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 set $mod Mod4
 # set $mod Mod1
 # exec --no-startup-id /usr/lib/gsd-xsettings
@@ -289,5 +289,5 @@ bindsym $mod+c exec --no-startup-id clipster -sc
 # email client
 exec --no-startup-id bluemail
 
-# phone_connect
-# exec --no-startup-id kdeconnect-app 
+# phone kde-connect
+exec --no-startup-id kdeconnect-app 
