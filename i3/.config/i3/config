@@ -290,4 +290,4 @@ bindsym $mod+c exec --no-startup-id clipster -sc
 exec --no-startup-id bluemail
 
 # phone kde-connect
-exec --no-startup-id kdeconnect-app 
+# exec --no-startup-id kdeconnect-app 
