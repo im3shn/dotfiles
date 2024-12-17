@@ -19,7 +19,7 @@ tmux
 yazi
 kitty
 timeshift
-obs-studio
+obs-studio [linux-headers, v4l2loopback-dkms]
 vlc
 zsh
 neovim
@@ -43,6 +43,7 @@ whatsapp-web
 beeper
 bluemail
 clipster
+yay
 
 [others]
 tmux-tpm

@@ -15,7 +15,7 @@ set $mod Mod4
 # set $mod Mod1
 # exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id picom
-exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/charging3.png
+# exec --no-startup-id feh --bg-scale ~/dotfiles/backgrounds/charging3.png
 # exec --no-startup-id xrdb -merge ~/.Xresources
 # exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 
@@ -26,8 +26,8 @@ bindsym $mod+Shift+T exec --no-startup-id ~/.config/polybar/launch_polybar.sh
 # dunst notification binds
 # bindsym $mod+grave exec dunstctl context
 # bindsym Mod1+Shift+grave exec dunstctl close-all
-bindsym $mod+grave exec --no-startup-id dunstctl history-pop
-bindsym $mod+Shift+grave exec --no-startup-id dunstctl close
+bindsym $mod+Shift+grave exec --no-startup-id dunstctl history-pop
+bindsym $mod+grave exec --no-startup-id dunstctl close
 
 # screenshot binds
 bindsym Print exec maim "/home/$USER/Pictures/$(date).jpg"
@@ -76,7 +76,7 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id kitty; workspace $ws3;
+bindsym $mod+Return exec --no-startup-id "kitty utility-session"; workspace $ws3;
 #; workspace $ws3;  
 
 # kill focused window
@@ -234,18 +234,19 @@ exec --no-startup-id brave;
 exec --no-startup-id kitty utility-session;
 # available at  /home/$USER/.local/share/applications/
 # exec --no-startup-id /opt/google/chrome/google-chrome "--profile-directory=Profile 5" --app-id=hnpfjngllnobngcgfapefoaidbinmjnm;
-exec --no-startup-id signal-desktop;
-exec --no-startup-id beeper;
+# exec --no-startup-id beeper;
+# exec --no-startup-id signal-desktop;
 
 bindsym $mod+Shift+c exec --no-startup-id google-chrome-stable https://google.com; workspace $ws2;
 bindsym $mod+Shift+b exec --no-startup-id brave https://youtube.com; workspace $ws1;
 bindsym $mod+Mod1+7 exec --no-startup-id signal-desktop;
 # bindsym Mod1+Return exec --no-startup-id kitty utility-session;
 
-assign [title="WhatsApp Web"] $ws7 
+assign [title="WhatsApp Web"] $ws7
 assign [class="Google-chrome"] $ws2
 assign [class="Brave-browser"] $ws1
 assign [class="kitty"] $ws3
+assign [class="alacritty"] $ws3
 assign [class="Signal"] $ws7
 assign [class="Beeper"] $ws7
 assign [class="Gimp"] $ws6
@@ -276,7 +277,7 @@ bindsym $mod+mod1+f exec --no-startup-id nautilus
 bindsym $mod+mod1+L exec --no-startup-id i3lock -c "000000";
 bindsym $mod+mod1+T exec --no-startup-id notify-send "$(date)"
 bindsym $mod+mod1+B exec --no-startup-id notify-send "$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -e percentage -e time)"
-bindsym $mod+mod1+M exec --no-startup-id  notify-send  "Mobile Bat: $( gdbus call --session --dest org.kde.kdeconnect --object-path /modules/kdeconnect/devices/be9e262d_550a_4d30_91cf_f0e39c4ff324/battery --method org.freedesktop.DBus.Properties.Get org.kde.kdeconnect.device.battery charge | egrep -o '[0-9.]+') isCharging $(gdbus call --session --dest org.kde.kdeconnect --object-path /modules/kdeconnect/devices/be9e262d_550a_4d30_91cf_f0e39c4ff324/battery --method org.freedesktop.DBus.Properties.Get org.kde.kdeconnect.device.battery isCharging | egrep -o '[a-z.]+')";
+# bindsym $mod+mod1+M exec --no-startup-id  notify-send  "Mobile Bat: $( gdbus call --session --dest org.kde.kdeconnect --object-path /modules/kdeconnect/devices/be9e262d_550a_4d30_91cf_f0e39c4ff324/battery --method org.freedesktop.DBus.Properties.Get org.kde.kdeconnect.device.battery charge | egrep -o '[0-9.]+') isCharging $(gdbus call --session --dest org.kde.kdeconnect --object-path /modules/kdeconnect/devices/be9e262d_550a_4d30_91cf_f0e39c4ff324/battery --method org.freedesktop.DBus.Properties.Get org.kde.kdeconnect.device.battery isCharging | egrep -o '[a-z.]+')";
 
 exec --no-startup-id ~/.local/scripts/i3-battery-popup -L 50 -I 10 -n
 

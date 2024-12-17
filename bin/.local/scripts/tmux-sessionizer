@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/nobarun ~/zoho_test ~/projects ~/learning/zoho_console_apps ~/work ~/personal ~/learning -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/VexData ~/nobarun ~/zoho_test ~/projects ~/learning/zoho_console_apps ~/work ~/personal ~/learning -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
