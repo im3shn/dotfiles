@@ -44,6 +44,10 @@ beeper
 bluemail
 clipster
 yay
+btop
+lazygit
+lsd
+scrcpy
 
 [others]
 tmux-tpm
