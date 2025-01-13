@@ -137,3 +137,6 @@ precmd() { print "\n" }
 # 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
